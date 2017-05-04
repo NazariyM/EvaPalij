@@ -1,0 +1,11 @@
+ProjectTitle: Eva Palij
+
+PageList:
+- file: home-page.html
+  ready: 70%
+
+- file: product-page.html
+  ready: 5%
+
+- file: cart-page.html
+  ready: 7%

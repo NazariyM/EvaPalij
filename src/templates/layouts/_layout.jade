@@ -1,0 +1,19 @@
+include _mixins
+doctype html
+html
+  head
+    include _head
+
+  block variables
+  body(class=bodyClass)
+    include ../bemto/bemto
+    //begin out
+    .out(class=outClass)
+      block header
+
+      block content
+    //end out
+
+    //load scripts
+    block scripts
+      script(type="text/javascript" src="js/app.js")

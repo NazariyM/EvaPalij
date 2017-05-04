@@ -1,0 +1,272 @@
+---
+title: Eva Palij
+---
+extends layouts/_layout
+
+block variables
+	-var bodyClass = 'is-home';
+
+block header
+	//begin header
+	+b.HEADER.header.js-header
+		+e.container.container
+			+e.col
+				+b.hamburger._header.js-hamburger
+					+e.line
+					+e.line
+					+e.line
+					+e.line
+				+e.A.mail(href='#!')
+					+icon('icon-mail', 'header__mail-icon')
+
+			+b.NAV.nav._header.js-nav
+				+e.UL.list.js-fp-nav
+					+e.LI.list-item(data-menuanchor='info-section')
+						+e.A.list-link(href='#info-section') Информация
+					+e.LI.list-item(data-menuanchor='catalog-section')
+						+e.A.list-link(href='#catalog-section') Каталог
+					+e.LI.list-item(data-menuanchor='summary-section')
+						+e.A.list-link(href='#summary-section') Доставка
+					+e.LI.list-item(data-menuanchor='summary-section')
+						+e.A.list-link(href='#summary-section') Контакты
+				+b.logo._header
+					+e.white.js-logo-white
+						+e.white-in
+							+e.A.white-link(href='#!')
+								+e.IMG(src='img/logo-black.png').img
+					+e.black.js-logo-black
+						+e.black-in
+							+e.A.black-link(href='#screen-section')
+								+e.IMG(src='img/logo-white.png').img
+								+e.text нижнее белье
+
+			+b.buy.header__col
+				+e.A.item(href='#!')
+					+e.DIV.item-count
+						+e.SPAN 4
+					+icon('icon-heart', 'buy__item-icon')
+				+e.A.item(href='#!')
+					+icon('icon-cart', 'buy__item-icon')
+					+e.DIV.item-count
+						+e.SPAN 4
+
+	+b.BUTTON.next-section-btn(type='button').js-next-section
+		+icon('icon-arrow', 'next-section-btn__icon')
+	//end header
+block content
+	+b.js-home-fullpage
+		//begin screen
+		+b.SECTION.screen.fp-section(data-anchor='screen-section')
+			+e.background(style='background-image: url(img/bg/screen.jpg)')
+			+e.in
+				+e.title Соблазнительное белье...
+					+e.DIV.title-left ...он будет помнить
+					+e.DIV его всегда...
+				+e.slogan
+					+e.IMG(src='img/slogan.png')
+			+e.act
+				+e.BUTTON.act-btn(type='button')
+					+icon('icon-play', 'screen__act-icon')
+				+e.BUTTON.act-btn(type='button')
+					+icon('icon-mute', 'screen__act-icon')
+		//end screen
+
+		//begin info
+		+b.SECTION.info.fp-section(data-anchor='info-section')
+			+e.container.container
+				+e.col
+					+e.text
+						+e.H2.title.title-lg Информация о нас
+						+e.P.descr Равным образом постоянный количественный рост и сфера нашей активности требуют определения и уточнения направлений прогрессивного развития. Задача организации, в особенности же постоянный количественный рост и сфера нашей активности позволяет выполнять важные задания по разработке существенных финансовых и административных условий. Задача организации, в особенности же рамки и место обучения кадров способствует подготовки и реализации направлений прогрессивного развития.
+
+					+b.socials
+						-var socList = [{icon: 'vk'},{icon: 'od'},{icon:'fb'},{icon: 'inst'},{icon: 'tw'}]
+						mixin socLink(item)
+							+e.A(href='#!').link
+								+icon('icon-' + item.icon)
+						each item in socList
+							+socLink(item)
+				+e.col
+
+		//end info
+		//begin top-products
+		+b.SECTION.top-products.fp-section
+			+e.container.container
+				+e.item._top._full
+					+e.item-img(style='background-image: url(img/content/product-1.jpg)')
+					+e.in
+						+e.H3.item-title.title-sm Название модели
+						+e.P.item-descr Таким образом консультация с широким активом позволяет оценить значение существенных финансовых и административных условий.
+						+e.item-bar._divided
+							+e.item-prices
+								+e.item-price
+									+e.SPAN 1000 р
+								+e.item-price._old
+									+e.SPAN 1000 р
+							+e.item-actions
+								+e.A.watch-btn.btn(href='#!') Смотреть
+								+b.action-buttons._top-products
+									+e.A.btn(href='#!')
+										+icon('icon-heart', 'action-buttons__icon')
+									+e.A.btn(href='#!')
+										+icon('icon-cart', 'action-buttons__icon')
+					+e.item-label._pos Хит
+				+e.item._half._top
+					+e.item-img._custom-1._rh(style='background-image: url(img/content/product-2.jpg)')
+					+e.in
+						+e.H3.item-title.title-sm Название модели
+						+e.P.item-descr Таким образом консультация с широким активом позволяет оценить значение существенных финансовых и административных условий.
+						+e.item-bar
+							+e.item-prices
+								+e.item-price
+									+e.SPAN 1000 р
+								+e.item-price._old
+									+e.SPAN 1000 р
+							+e.item-actions
+								+e.A.watch-btn.btn(href='#!') Смотреть
+								+b.action-buttons._top-products
+									+e.A.btn(href='#!')
+										+icon('icon-heart', 'action-buttons__icon')
+									+e.A.btn(href='#!')
+										+icon('icon-cart', 'action-buttons__icon')
+				+e.item._white._half._bottom
+					+e.item-img._custom-2(style='background-image: url(img/content/product-3.jpg)')
+					+e.in
+						+e.H3.item-title.title-sm Название модели
+						+e.P.item-descr Таким образом консультация с широким активом позволяет оценить значение существенных финансовых и административных условий.
+						+e.item-bar
+							+e.item-prices
+								+e.item-price
+									+e.SPAN 1000 р
+								+e.item-price._old
+									+e.SPAN 1000 р
+							+e.item-actions
+								+e.A.watch-btn.btn._white(href='#!') Смотреть
+								+b.action-buttons._top-products._white
+									+e.A.btn(href='#!')
+										+icon('icon-heart', 'action-buttons__icon')
+									+e.A.btn(href='#!')
+										+icon('icon-cart', 'action-buttons__icon')
+		//end product
+
+		//begin catalog
+		+b.SECTION.catalog.fp-section(data-anchor='catalog-section')
+			+e.container.container
+				+e.in
+					+e.side
+						+e.H2.title.title-lg Каталог
+						+e.UL.nav.js-catalog-nav
+							+b.LI.is-active
+								+icon('icon-arrow-r', 'catalog__nav-icon')
+								+e.A(href='#') Купальники
+
+							+b.LI
+								+icon('icon-arrow-r', 'catalog__nav-icon')
+								+b.A(href='#') Бюстгалтеры
+
+							+e.LI
+								+icon('icon-arrow-r', 'catalog__nav-icon')
+								+e.A(href='#') Трусики
+
+							+e.LI
+								+icon('icon-arrow-r', 'catalog__nav-icon')
+								+e.A(href='#') Боди
+
+							+e.LI
+								+icon('icon-arrow-r', 'catalog__nav-icon')
+								+e.A(href='#') Аксессуары
+
+							+e.LI
+								+icon('icon-arrow-r', 'catalog__nav-icon')
+								+e.A(href='#') Sale
+
+
+					+e.content-wrap.js-catalog-content
+						+e.content
+							-
+								var catalogList = [{img: '1'},{img: '2'},{img: '1'},{img: '2'},{img: '1'},{img: '2'},{img: '1'},{img: '2'},{img: '1'},{img: '2'},{img: '1'},{img: '2'}];
+							mixin catalogItem(item)
+								+e.item
+									+e.item-img(style='background-image: url(img/content/catalog-#{item.img}.jpg)')
+									+e.item-info
+										+e.item-label Хит
+										+e.item-name Название модели
+										+e.item-prices
+											+e.item-price
+												+e.SPAN 1000 р
+											+e.item-price._old
+												+e.SPAN 1000 р
+										+b.action-buttons._catalog
+											+e.A.btn(href='#!')
+												+icon('icon-heart', 'action-buttons__icon')
+											+e.A.btn(href='#!')
+												+icon('icon-cart', 'action-buttons__icon')
+							each item in catalogList
+								+catalogItem(item)
+
+						+e.content
+							-
+								var catalogList = [{img: '2'},{img: '1'},{img: '2'},{img: '1'},{img: '2'},{img: '1'},{img: '2'},{img: '1'},{img: '2'},{img: '1'},{img: '2'},{img: '1'}];
+							mixin catalogItem(item)
+								+e.item
+									+e.item-img(style='background-image: url(img/content/catalog-#{item.img}.jpg)')
+									+e.item-info
+										+e.item-label Хит
+										+e.item-name Название модели
+										+e.item-prices
+											+e.item-price
+												+e.SPAN 1000 р
+											+e.item-price._old
+												+e.SPAN 1000 р
+										+b.action-buttons._catalog
+											+e.A.btn(href='#!')
+												+icon('icon-heart', 'action-buttons__icon')
+											+e.A.btn(href='#!')
+												+icon('icon-cart', 'action-buttons__icon')
+							each item in catalogList
+								+catalogItem(item)
+
+						+e.content
+							-
+								var catalogList = [{img: '1'},{img: '2'},{img: '1'},{img: '2'},{img: '1'},{img: '2'},{img: '1'},{img: '2'},{img: '1'},{img: '2'},{img: '1'},{img: '2'}];
+							mixin catalogItem(item)
+								+e.item
+									+e.item-img(style='background-image: url(img/content/catalog-#{item.img}.jpg)')
+									+e.item-info
+										+e.item-label Хит
+										+e.item-name Название модели
+										+e.item-prices
+											+e.item-price
+												+e.SPAN 1000 р
+											+e.item-price._old
+												+e.SPAN 1000 р
+										+b.action-buttons._catalog
+											+e.A.btn(href='#!')
+												+icon('icon-heart', 'action-buttons__icon')
+											+e.A.btn(href='#!')
+												+icon('icon-cart', 'action-buttons__icon')
+							each item in catalogList
+								+catalogItem(item)
+		//end catalog
+
+		//begin summary
+		+b.SECTION.summary.fp-section(data-anchor='summary-section')
+			+e.container.container
+				+e.info
+					+e.delivery.summary__info-col
+						+e.H2.delivery-title.title-md Доставка
+						+e.P.delivery-text Равным образом постоянный количественный рост и сфера нашей активности требуют определения и уточнения направлений прогрессивного развития. Задача организации, в особенности же постоянный количественный рост и сфера нашей активности позволяет выполнять важные задания по разработке существенных финансовых и административных условий. Задача организации, в особенности же рамки и место обучения кадров способствует подготовки и реализации направлений прогрессивного развития.
+					+b.subscr.summary__info-col
+						+e.H2.title.title-md Подписка
+						+e.P.descr Получать информацию об акциях и специальных предложений
+						+e.form-wrap
+							+e.FORM(action='#!')
+								+e.form-in
+									+e.form-field
+										+b.input.subscr__input(type='email' placeholder='Введите свой e-mail' required name='')
+									+e.form-field
+										+e.BUTTON.btn.btn._shadow(type='submit') подписаться
+
+			include partials/_footer
+		//end summary
+
