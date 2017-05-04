@@ -143,6 +143,7 @@
 		max-width: 660px
 		line-height: 0.96
 		+sm
+			line-height: 1.15
 			font-size: 16px
 
 /* top-products
@@ -164,13 +165,12 @@
 		align-items: center
 		+sm
 			height: auto
-			min-height: 300px
 			width: 100%
-			padding: 20px 15px 20px
+			padding: 40px 15px
 		&_full
 			.top-products__in
 				align-self: flex-start
-				@media only screen and (max-width: 1023px) and (min-height: 600px)
+				@media only screen and (min-width: 767px) and (max-width: 1023px) and (min-height: 600px)
 					padding-top: 66px
 		&_top
 			padding: 140px 30px 30px 100px
@@ -178,7 +178,7 @@
 				padding: 90px 20px 10px 120px
 			+r(1365)
 				padding: 115px 20px 10px 70px
-			@media only screen and (max-width: 1023px) and (min-height: 600px)
+			@media only screen and (min-width: 767px) and (max-width: 1023px) and (min-height: 600px)
 				padding: 115px 20px 10px 20px!important
 		&_bottom
 			padding: 90px 30px 30px 100px
@@ -245,7 +245,8 @@
 				font-size: 15px
 			+sm
 				font-size: 17px
-			@media only screen and (max-width: 1023px) and (min-height: 750px)
+				line-height: 1.1
+			@media only screen and (min-width: 767px) and (max-width: 1023px) and (min-height: 750px)
 				font-size: 20px!important
 		&-bar
 			max-width: 690px
@@ -268,7 +269,7 @@
 					+md
 						margin-top: 40px
 					+sm
-						margin-top: 30px
+						margin-top: 20px
 		&-prices
 			display: inline-block
 			vertical-align: middle
@@ -313,10 +314,10 @@
 				padding: 14px 30px 14px 80px
 			+sm
 				font-size: 23px
-				padding: 14px 30px 14px 50px
+				padding: 14px 17px 14px 50px
 				bottom: auto
 				left: auto
-				top: 22px
+				top: 0
 				right: 0
 		
 		&_white &-title,
@@ -340,7 +341,7 @@
 	----------------------------------- */
 .catalog
 	+sm
-		padding: 30px 0
+		padding: 30px 0 10px
 	&__container
 		padding: 90px 15px 220px
 		+lg
@@ -496,6 +497,8 @@
 /* summary
 	----------------------------------- */
 .summary
+	+sm
+		padding: 10px 0 30px
 	&__info
 		padding-bottom: 60px
 		margin: 0 -15px

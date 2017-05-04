@@ -3516,13 +3516,14 @@ $(function () {
 	function initBlackHeader() {
 		var $header = $('.js-header'),
 		    $nav = $('.js-nav'),
-		    $body = $('body');
+		    $body = $('body'),
+		    windowWidth = 767;
 
-		$(window).on('resize', function () {
-			if ($(window).width() <= 767 && $header.hasClass('header_inside') && !$body.hasClass('is-home')) {
+		$(window).on('resize, load', function () {
+			if ($(window).width() <= windowWidth && $header.hasClass('header_inside') && !$body.hasClass('is-home')) {
 				$header.removeClass('header_inside');
 				$nav.removeClass('nav_inside');
-			} else if ($(window).width() >= 767 && !$header.hasClass('header_inside') && !$body.hasClass('is-home')) {
+			} else if ($(window).width() >= windowWidth && !$header.hasClass('header_inside') && !$body.hasClass('is-home')) {
 				$header.addClass('header_inside');
 				$nav.addClass('nav_inside');
 			}
