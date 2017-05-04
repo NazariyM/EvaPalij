@@ -1,0 +1,324 @@
+/* socials
+	----------------------------------- */
+.socials
+	+clr
+	&__link
+		float: left
+		width: 50px
+		height: 50px
+		background: $black
+		text-align: center
+		line-height: 66px
+		transition: .7s cubic-bezier(0.22, 0.61, 0.36, 1)
+		&:hover
+			background: $white
+		&:hover svg
+			fill: $black
+		& + &
+			margin-left: 15px
+			+sm
+				margin-left: 10px
+		svg
+			fill: $white
+			font-size: 26px
+			transition: .7s cubic-bezier(0.22, 0.61, 0.36, 1)
+
+/* next-btn
+	----------------------------------- */
+.next-section-btn
+	position: fixed
+	left: 50%
+	margin-left: -27px
+	height: 50px
+	width: 54px
+	bottom: 0
+	border-radius: 50% 50% 0 0
+	background: $black
+	z-index: 10
+	line-height: 71px
+	+sm
+		display: none
+	&:hover &__icon
+		animation: moveDown 1s ease-out infinite alternate
+		animation-fill-mode: forwards
+	&__icon
+		fill: $white
+		+gpu
+		font-size: 18px
+		
+/* header bg in catalog sect.
+	----------------------------------- */
+.fp-viewing-catalog-section
+	.header
+		background: $white
+		
+/* actions-buttons
+	----------------------------------- */
+.action-buttons
+	display: inline-block
+	vertical-align: middle
+	&__btn
+		display: inline-block
+		vertical-align: middle
+		.icon-heart
+			font-size: 29px
+			stroke-width: 3px
+			stroke: $black
+			transition: transform .3s cubic-bezier(0.37, 1.15, 1, 1.82)
+		.icon-cart
+			font-size: 30px
+			stroke-width: 0
+			transition: transform .3s ease
+		& + &
+			margin-left: 25px
+			+lg
+				margin-left: 15px
+	&__icon
+		+gpu
+	&__btn:hover .icon-heart
+		transform: scale(1.2)
+	&__btn:hover .icon-cart
+		transform: scale(1.2)
+	&_white &__icon
+		fill: $white
+	
+	&_top-products
+		margin-left: 50px
+		+lg
+			margin-left: 20px
+	&_catalog
+		margin-top: 30px
+		.icon-heart
+			stroke-width: 5px
+		+r(1599)
+			margin-top: 20px
+		+r(424)
+			margin-top: 40px
+	&_catalog &__icon
+		fill: $white
+		stroke: $white
+	&_product
+		margin-left: 40px
+		+r(1365)
+			margin-left: 10px
+		+r(374)
+			display: block
+			margin: 20px auto 0
+			text-align: center
+	&_product &__btn + &__btn
+		margin-left: 40px
+		+r(1365)
+			margin-left: 20px
+
+/* some animations
+	----------------------------------- */
+@keyframes moveDown
+	0%
+		transform: translateY(0)
+	75%
+		transform: translateY(4px)
+	100%
+		transform: translateY(0)
+		
+@keyframes modalComeIn
+	0%
+		visibility: hidden
+		opacity: 0
+		transform: scale(.8, .8)
+
+	65.5%
+		transform: scale(1.03, 1.03)
+
+	100%
+		visibility: visible
+		opacity: 1
+		transform: scale(1, 1)
+
+
+
+@keyframes modalHeadOut
+	0%
+		visibility: visible
+		opacity: 1
+		transform: translateY(0) scale(1, 1)
+
+	100%
+		visibility: hidden
+		opacity: 0
+		transform: translateY(35px) scale(.97, .97)
+
+		
+/* popup
+	----------------------------------- */
+.popup
+	position: fixed
+	top: 0
+	left: 0
+	right: 0
+	bottom: 0
+	overflow: auto
+	padding: 15px
+	background: rgba(#000, .8)
+	opacity: 0
+	visibility: hidden
+	transition: opacity 0.3s ease, visibility 0.3s ease
+	z-index: 100
+	text-align: center
+	font-size: 0
+	+sm
+		padding: 10px
+	+vertical
+	&.is-open
+		visibility: visible
+		opacity: 1
+	&.is-open &__in
+		animation: modalComeIn 0.3s ease
+		visibility: visible
+	&__in
+		position: relative
+		display: inline-block
+		vertical-align: middle
+		max-width: 1088px
+		width: 100%
+		padding: 66px
+		background: $white
+		box-shadow: 0 0 10px 0 rgba(51, 51, 51, 0.4)
+		transform-style: preserve-3d
+		+gpu
+		+clr
+		+r(1599)
+			max-width: 800px
+			padding: 40px
+		+r(1365)
+			max-width: 680px
+			padding: 30px
+		+sm
+			padding: 15px
+	&__img-wrap
+		position: relative
+		float: left
+		width: percentage(394 / 956)
+		padding-top: 54.8%
+		+r(475)
+			float: none
+			margin: 0 auto
+	&__img
+		+coverdiv
+		+cover
+		z-index: 1
+	&__text
+		float: right
+		padding-top: 20px
+		min-height: 524px
+		width: percentage(494 / 956)
+		display: flex
+		flex-direction: column
+		align-items: stretch
+		text-align: left
+		+r(1599)
+			min-height: 395px
+		+r(1365)
+			min-height: 340px
+		+sm
+			min-height: 0
+			width: 54.6%
+		+r(474)
+			width: 100%
+			text-align: center
+	&__title
+		padding-bottom: 34px
+		border-bottom: 2px solid $black
+		+r(1599)
+			padding-bottom: 20px
+			font-size: 34px
+		+sm
+			font-size: 25px
+			padding-bottom: 15px
+	&__data
+		margin-top: 35px
+		+r(1599)
+			margin-top: 20px
+		+r(1365)
+			margin-top: 10px
+		+sm
+			margin: 10px 0 15px
+		&-name
+			max-width: 360px
+			+r(1599)
+				font-size: 38px
+			+r(1365)
+				font-size: 34px
+			+sm
+				font-size: 25px
+		&-info
+			margin: 35px 0 10px
+			+r(1365)
+				margin: 20px 0 10px
+		&-item
+			font-size: 30px
+			color: #808080
+			+sm
+				font-size: 19px
+			+r(1599)
+				font-size: 22px
+			& + &
+				margin-top: 10px
+			span
+				color: $black
+	&__close-btn
+		position: absolute
+		right: 30px
+		top: 30px
+		font-size: 28px
+		.icon-close
+			fill: $black
+		+sm
+			top: 15px
+			right: 15px
+	&__basket-btn
+		align-self: flex-start
+		margin-top: auto
+		padding: 13px 15px
+		+sm
+			padding: 10px 12px
+			font-size: 17px
+		+r(474)
+			align-self: center
+
+/* quantity
+	----------------------------------- */
+.quantity
+	font-size: 0
+	&__icon
+		display: inline-block
+		vertical-align: middle
+		color: $white
+		border: 2px solid #818181
+		border-radius: 50%
+		width: 26px
+		height: 26px
+		cursor: pointer
+		+nosel
+		+trs
+		+gpu
+		&:hover
+			border-color: $black
+		&:hover svg
+			fill: $black
+		&:active
+			transform: scale(.9)
+		svg
+			fill: #818181
+			font-size: 22px
+			+trs
+	&__num
+		display: inline-block
+		vertical-align: middle
+		margin: 0 5px
+		max-width: 30px
+		input
+			width: 100%
+			+f('amg', 24)
+			text-align: center
+			+r(1365)
+				font-size: 20px

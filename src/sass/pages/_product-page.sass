@@ -1,0 +1,228 @@
+.product
+	padding: 200px 0 30px
+	+r(1439)
+		padding: 150px 0 30px
+	+sm
+		padding: 120px 0 30px
+	+r(599)
+		padding-top: 75px
+	&__in
+		display: flex
+		justify-content: space-between
+		+md
+			flex-wrap: wrap
+	&__data
+		position: relative
+		display: flex
+		flex-direction: column
+		width: percentage(555 / 1716)
+		padding-right: 15px
+		+md
+			width: 100%
+			order: 1
+			padding: 30px 15px 0
+		+r(599)
+			padding: 10px 0 20px
+			order: 0
+		&-name
+			max-width: 300px
+			+sm
+				font-size: 32px
+		&-descr
+			margin-top: 25px
+			+sm
+				line-height: 1.2
+		&-prices
+			margin-top: 90px
+			font-size: 0
+			+r(1365)
+				margin-top: 50px
+			+md
+				margin-top: 0
+				position: absolute
+				z-index: 1
+				top: 45px
+				right: 30px
+			+sm
+				top: 30px
+			+r(599)
+				position: static
+				margin-top: 15px
+		&-price
+			display: inline-block
+			vertical-align: middle
+			font-size: 42px
+			+sm
+				font-size: 32px
+			& + &
+				margin-left: 75px
+				+r(1365)
+					margin-left: 30px
+				+sm
+					margin-left: 20px
+			&_old
+				font-size: 30px
+				text-decoration-line: line-through
+				+sm
+					font-size: 22px
+		&-article
+			margin-top: auto
+			+md
+				margin-top: 50px
+			+r(599)
+				margin-top: 15px
+	&__view
+		width: percentage(1077 / 1716)
+		padding-left: 15px
+		+lg
+			width: 70%
+		+md
+			width: 100%
+		+sm
+			padding-left: 0
+		&-in
+			display: flex
+			+r(599)
+				flex-wrap: wrap
+		&-img-wrap
+			position: relative
+			padding-top: 51.3%
+			width: 38.7%
+			align-self: flex-start
+			+r(1599)
+				padding-top: 53.4%
+				width: 42.7%
+			+md
+				padding-top: 55.2%
+				width: 44%
+			+r(599)
+				width: 100%
+				padding-top: 100%
+		&-img
+			+coverdiv
+			+cover
+			z-index: 1
+			+r(599)
+				background-size: contain
+	&__select
+		display: flex
+		flex-direction: column
+		width: percentage(590 / 1062)
+		margin-left: 70px
+		+lg
+			margin-left: 20px
+		+sm
+			width: 100%
+		+r(599)
+			margin-left: 0
+			margin-top: 20px
+			align-items: center
+		&-title
+			font-size: 30px
+			+r(1365)
+				font-size: 22px
+		
+		&-look
+			font-size: 0
+			margin: 30px 0 20px
+			+r(1365)
+				margin: 15px 0 10px
+	
+	&__choice
+		position: relative
+		display: inline-block
+		vertical-align: top
+		margin-right: 8px
+		margin-bottom: 8px
+		+r(599)
+			margin-right: 5px
+			margin-bottom: 5px
+		&:nth-child(4n)
+			margin-right: 0
+			+r(599)
+				margin-right: 5px
+				margin-bottom: 5px
+		&-input:checked + &-check::after
+			opacity: 1
+			transform: scale(1)
+		&-img
+			+coverdiv
+			+cover
+			z-index: 0
+		&-check
+			position: relative
+			width: 140px
+			height: 140px
+			display: block
+			cursor: pointer
+			+r(1599)
+				width: 115px
+				height: 115px
+			+r(1365)
+				width: 85px
+				height: 85px
+			&::after
+				opacity: 1
+				transform: scale(0)
+				display: block
+				content: ''
+				position: absolute
+				top: -4px
+				left: -4px
+				right: -4px
+				bottom: -4px
+				z-index: -1
+				border: 2px solid $black
+				transition: opacity .3s ease-in-out,transform .5s cubic-bezier(0.51, -0.38, 0.36, 1)
+	&__size
+		font-size: 0
+		&-item
+			display: inline-block
+			vertical-align: middle
+			width: 72px
+			height: 72px
+			margin-right: 13px
+			margin-bottom: 13px
+			border: 2px solid $black
+			text-align: center
+			line-height: 72px
+			+r(1365)
+				width: 50px
+				height: 50px
+				line-height: 50px
+			+sm
+				margin-right: 5px
+				margin-bottom: 5px
+			&:nth-child(7)
+				margin-right: 0
+		&-check
+			display: block
+			height: 100%
+			font-size: 24px
+			cursor: pointer
+			transition: background .3s ease-in-out, color .3s ease
+			+r(1365)
+				font-size: 20px
+		&-input:checked + &-check
+			background: $black
+			color: $white
+	&__order
+		margin-top: auto
+		+sm
+			margin-top: 20px
+		
+		&-btn
+			padding: 13px 18px
+			border-width: 2px
+			+r(1439)
+				padding: 13px 35px
+			+sm
+				padding: 10px 15px
+	
+	&__choice-input,
+	&__size-input
+			position: absolute
+			visibility: hidden
+			opacity: 0
+		
+		

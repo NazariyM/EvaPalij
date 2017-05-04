@@ -1,0 +1,223 @@
+.cart
+	&__container
+		+r(1599)
+			padding: 130px 15px 30px
+		+md
+			padding: 120px 15px 30px
+		+sm
+			padding: 80px 10px 30px
+	&__in
+		margin-bottom: 75px
+		+justify
+		+r(1365)
+			margin-bottom: 45px
+		+sm
+			margin-bottom: 10px
+	&__title
+		display: inline-block
+		vertical-align: middle
+		+sm
+			font-size: 42px
+	&__status
+		display: inline-block
+		vertical-align: bottom
+		&-text
+			font-size: 35px
+			line-height: 1
+			color: #808080
+			+lg
+				font-size: 30px
+			+md
+				font-size: 25px
+			+sm
+				padding-top: 10px
+				padding-left: 15px
+				font-size: 18px
+
+/* order
+	----------------------------------- */
+.order
+	$this: &
+	&__table
+		display: table
+		width: 100%
+		+r(1365)
+			font-size: 18px
+		+md
+			font-size: 16px
+		+sm
+			display: block
+			padding: 10px 0
+			+clr
+		&-head
+			display: table-row
+			color: #808080
+			border: none
+			+sm
+				float: left
+				display: block
+				width: 50%
+			#{$this}__table-cell
+				padding: 0 10px 20px
+				border-bottom: 2px solid #B4B4B4
+				&::after
+					display: none
+					content: ''
+					bottom: 0
+					position: absolute
+					left: 0
+					width: 200%
+					height: 2px
+					z-index: 1
+					background: $black
+					pointer-events: none
+					+sm
+						display: block
+				+sm
+					position: relative
+					display: block
+					padding: 0
+					text-align: left
+					color: $black
+					border-bottom: none
+					&:first-child
+						+sm
+							padding: 100px 0 20px
+							font-size: 26px
+					&:first-child::after
+						display: none
+					&:not(:first-child)
+						padding: 10px 0
+		
+		&-row
+			display: table-row
+			+sm
+				float: right
+				display: block
+				width: 50%
+		&-cell
+			display: table-cell
+			vertical-align: middle
+			padding: 5px 10px
+			width: 14.28571%
+			+sm
+				display: block
+				width: 100%
+				padding: 2px 0 15px
+				text-align: right
+			
+			&:first-child
+				padding-left: 0
+			&_quantity
+				padding: 0
+		&-pic-wrap
+			position: relative
+			width: 150px
+			height: 150px
+			+md
+				width: 100px
+				height: 100px
+			+sm
+				width: 140px
+				height: 140px
+				display: inline-block
+				
+		&-pic
+			+cover
+			+coverdiv
+			z-index: 1
+			
+	&__bar
+		padding-top: 60px
+		display: flex
+		min-height: 110px
+		border-top: 2px solid #B4B4B4
+		+r(1365)
+			padding-top: 30px
+		+md
+		    flex-wrap: wrap
+		+sm
+			padding-top: 5px
+			border-top: none
+	&__promo
+		font-size: 0
+		width: percentage(350 / 1718)
+		+lg
+			width: 17.4%
+		+r(1375)
+			width: 150px
+		&-text
+			display: inline-block
+			vertical-align: middle
+			margin-right: 20px
+			font-size: 24px
+			+lg
+				margin-bottom: 15px
+				margin-right: 0
+			+md
+				font-size: 18px
+			
+		&-coupon
+			display: inline-block
+			vertical-align: middle
+			max-width: 120px
+			input
+				+sm
+					line-height: 42px
+					height: 42px
+	&__actions
+		margin-left: 50px
+		+lg
+			margin-left: 0
+		+sm
+			width: calc(100% - 150px)
+			max-width: 150px
+			margin-left: auto
+		&-btn
+			display: inline-block
+			padding: 12px 20px
+			+r(1365)
+				padding: 12px 10px
+				font-size: 18px
+			+md
+				font-size: 16px
+			+sm
+				float: right
+				padding: 5px 10px
+			& + &
+				margin-left: 20px
+				+lg
+					margin-left: 10px
+				+sm
+					margin-left: 0
+					margin-top: 5px
+					
+			&_order
+				padding: 12px 31px
+	&__summary
+		margin-left: auto
+		min-width: 375px
+		text-align: right
+		line-height: .7
+		font-size: 30px
+		+lg
+			font-size: 24px
+			min-width: 300px
+		+r(1375)
+			font-size: 20px
+			min-width: 250px
+		+sm
+			margin-top: 20px
+			font-size: 17px
+		&-item
+			+clr
+			& + &
+				margin-top: 15px
+		&-text
+			float: left
+			width: 60%
+			color: #808080
+		&-price
+			float: right
+			width: 40%
+			color: $black

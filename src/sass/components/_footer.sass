@@ -1,0 +1,48 @@
+.footer
+	position: relative
+	padding: 40px 0 0
+	+r(1439)
+		padding-top: 15px
+	&::before
+		position: absolute
+		top: 0
+		left: 50px
+		right: 50px
+		height: 1px
+		background: $black
+		content: ''
+	&__container
+		+clr
+	&__col
+		float: left
+		width: 25%
+		+sm
+			width: 50%
+			margin-top: 10px
+			padding: 0 5px
+		& + &
+			padding-left: 15px
+			+sm
+				padding-left: 0
+	&__title
+		font-size: 53px
+		+r(1439)
+			font-size: 35px
+		+md
+			font-size: 27px
+		+sm
+			font-size: 24px
+	&__list
+		margin-top: 25px
+		+r(1439)
+			margin-top: 15px
+		li
+			&:not(:last-child)
+				margin-bottom: 10px
+			a
+				+sm
+					font-size: 14px
+		&-margin
+			margin-top: 50px
+			+sm
+				margin-top: 20px

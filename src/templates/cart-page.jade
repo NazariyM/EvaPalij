@@ -1,0 +1,119 @@
+---
+title: Eva Palij
+---
+extends layouts/_layout
+
+block header
+	//begin header
+	+b.HEADER.header._inside.js-header
+		+e.container.container
+			+e.col
+				+b.hamburger._header.js-hamburger
+					+e.line
+					+e.line
+					+e.line
+					+e.line
+				+e.A.mail(href='#!')
+					+icon('icon-mail', 'header__mail-icon')
+
+			+b.NAV.nav._inside._header.js-nav
+				+e.UL.list
+					+e.LI.list-item
+						+e.A.list-link(href='#info-section') Информация
+					+e.LI.list-item
+						+e.A.list-link(href='#catalog-section') Каталог
+					+e.LI.list-item
+						+e.A.list-link(href='#summary-section') Доставка
+					+e.LI.list-item
+						+e.A.list-link(href='#summary-section') Контакты
+				+b.logo._header.is-visible
+					+e.black
+						+e.black-in
+							+e.A.black-link(href='#screen-section')
+								+e.IMG(src='img/logo-white.png').img
+								+e.text нижнее белье
+
+			+b.buy.header__col
+				+e.A.item(href='#!')
+					+e.DIV.item-count
+						+e.SPAN 4
+					+icon('icon-heart', 'buy__item-icon')
+				+e.A.item(href='#!')
+					+icon('icon-cart', 'buy__item-icon')
+					+e.DIV.item-count
+						+e.SPAN 4
+	//end header
+
+block content
+	//begin basket
+	+b.cart
+		+e.container.container._page
+			+e.in
+				+e.H2.title.title-md Корзина
+				+e.status
+					+e.status-text в корзине
+						=	' '
+						+e.SPAN 1
+						=' '
+						| товар
+
+			+b.order
+				+e.FORM(action='#!')
+					+e.table
+						+e.table-head
+							+e.table-cell Модель
+							+e.table-cell Название
+							+e.table-cell Артикул
+							+e.table-cell Размер
+							+e.table-cell Цвет
+							+e.table-cell Цена
+							+e.table-cell Кол-во
+						+e.table-row
+							+e.table-cell
+								+e.table-pic-wrap
+									+e.table-pic(style='background-image: url(img/content/catalog-1.jpg)')
+
+							+e.table-cell
+								+e.SPAN Купальник
+							+e.table-cell
+								+e.SPAN 001003
+							+e.table-cell
+								+e.SPAN 75В
+							+e.table-cell
+								+e.SPAN Бирюзовый
+							+e.table-cell
+								+e.SPAN 1000 р
+							+e.table-cell._quantity
+								+b.quantity.js-quantity
+									+e.icon.js-remove-item
+										+icon('icon-decrease')
+									+e.num
+										input(type='text', value='1', readonly='')
+									+e.icon.js-add-item
+										+icon('icon-increase')
+
+					+e.bar
+						+e.promo
+							+e.promo-text Купон на скидку
+							+e.promo-coupon
+								+b.INPUT.input.input_default(type='text' name='')
+						+e.actions
+							+e.BUTTON.actions-btn.btn._disabled._shadow(type='button') очистить корзину
+							+e.BUTTON.actions-btn.btn._disabled._shadow(type='button') продолжить покупки
+							+e.BUTTON.actions-btn._order.btn._shadow(type='button') оформить заказ
+						+e.summary
+							+e.summary-item
+								+e.summary-text Сумма заказа:
+								+e.summary-price
+									+e.SPAN 1000 р.
+							+e.summary-item
+								+e.summary-text Скидка:
+								+e.summary-price
+									+e.SPAN 0 р.
+							+e.summary-item
+								+e.summary-text Итого:
+								+e.summary-price
+									+e.SPAN 1000 р.
+
+
+	//end basket

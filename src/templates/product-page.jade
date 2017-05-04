@@ -1,0 +1,156 @@
+---
+title: Eva Palij
+---
+extends layouts/_layout
+
+block header
+	//begin header
+	+b.HEADER.header._inside.js-header
+		+e.container.container
+			+e.col
+				+b.hamburger._header.js-hamburger
+					+e.line
+					+e.line
+					+e.line
+					+e.line
+				+e.A.mail(href='#!')
+					+icon('icon-mail', 'header__mail-icon')
+
+			+b.NAV.nav._inside._header.js-nav
+				+e.UL.list
+					+e.LI.list-item
+						+e.A.list-link(href='#info-section') Информация
+					+e.LI.list-item
+						+e.A.list-link(href='#catalog-section') Каталог
+					+e.LI.list-item
+						+e.A.list-link(href='#summary-section') Доставка
+					+e.LI.list-item
+						+e.A.list-link(href='#summary-section') Контакты
+				+b.logo._header.is-visible
+					+e.black
+						+e.black-in
+							+e.A.black-link(href='#screen-section')
+								+e.IMG(src='img/logo-white.png').img
+								+e.text нижнее белье
+
+			+b.buy.header__col
+				+e.A.item(href='#!')
+					+e.DIV.item-count
+						+e.SPAN 4
+					+icon('icon-heart', 'buy__item-icon')
+				+e.A.item(href='#!')
+					+icon('icon-cart', 'buy__item-icon')
+					+e.DIV.item-count
+						+e.SPAN 4
+	//end header
+
+block content
+	//begin product
+	+b.SECTION.product
+		+e.container.container
+			+e.in
+				+e.data
+					+e.H2.data-name.title-sm Название модели
+					+e.P.data-descr Таким образом консультация с широким активом позволяет оценить значение существенных финансовых и административных условий.
+					+e.data-prices
+						+e.data-price
+							+e.SPAN 1000 р
+						+e.data-price._old
+							+e.SPAN 1000 р
+					+e.data-article Артикул
+						=	' '
+						+e.SPAN 001003
+
+				+e.view
+					+e.FORM(action='#!')
+						+e.view-in
+							+e.view-img-wrap
+								+e.view-img(style='background-image: url(img/content/catalog-1.jpg)')
+							+e.select
+								+e.select-title Выберите цвет и размер товара
+								+e.select-look
+									+e.choice
+										+e.INPUT.choice-input(id='type-1' type='radio' name='color-1')
+										+e.choice-check.LABEL(for='type-1')
+											+e.DIV.choice-img(style='background-image: url(img/content/catalog-1.jpg)')
+									+e.choice
+										+e.INPUT.choice-input(id='type-2' type='radio' name='color-1')
+										+e.choice-check.LABEL(for='type-2')
+											+e.DIV.choice-img(style='background-image: url(img/content/catalog-1.jpg)')
+									+e.choice
+										+e.INPUT.choice-input(id='type-3' type='radio' name='color-1')
+										+e.choice-check.LABEL(for='type-3')
+											+e.DIV.choice-img(style='background-image: url(img/content/catalog-1.jpg)')
+									+e.choice
+										+e.INPUT.choice-input(id='type-4' type='radio' name='color-1')
+										+e.choice-check.LABEL(for='type-4')
+											+e.DIV.choice-img(style='background-image: url(img/content/catalog-1.jpg)')
+									+e.choice
+										+e.INPUT.choice-input(id='type-5' type='radio' name='color-1')
+										+e.choice-check.LABEL(for='type-5')
+											+e.DIV.choice-img(style='background-image: url(img/content/catalog-1.jpg)')
+									+e.choice
+										+e.INPUT.choice-input(id='type-6' type='radio' name='color-1')
+										+e.choice-check.LABEL(for='type-6')
+											+e.DIV.choice-img(style='background-image: url(img/content/catalog-1.jpg)')
+									+e.choice
+										+e.INPUT.choice-input(id='type-7' type='radio' name='color-1')
+										+e.choice-check.LABEL(for='type-7')
+											+e.DIV.choice-img(style='background-image: url(img/content/catalog-1.jpg)')
+									+e.choice
+										+e.INPUT.choice-input(id='type-8' type='radio' name='color-1')
+										+e.choice-check.LABEL(for='type-8')
+											+e.DIV.choice-img(style='background-image: url(img/content/catalog-1.jpg)')
+
+								+e.size
+									+e.size-item
+										+e.INPUT.size-input(id='type-9' type='radio' name='size-1')
+										+e.size-check.LABEL(for='type-9') 75В
+									+e.size-item
+										+e.INPUT.size-input(id='type-10' type='radio' name='size-1')
+										+e.size-check.LABEL(for='type-10') 75В
+									+e.size-item
+										+e.INPUT.size-input(id='type-11' type='radio' name='size-1')
+										+e.size-check.LABEL(for='type-11') 75В
+									+e.size-item
+										+e.INPUT.size-input(id='type-12' type='radio' name='size-1')
+										+e.size-check.LABEL(for='type-12') 75В
+									+e.size-item
+										+e.INPUT.size-input(id='type-13' type='radio' name='size-1')
+										+e.size-check.LABEL(for='type-13') 75В
+									+e.size-item
+										+e.INPUT.size-input(id='type-14' type='radio' name='size-1')
+										+e.size-check.LABEL(for='type-14') 75В
+									+e.size-item
+										+e.INPUT.size-input(id='type-15' type='radio' name='size-1')
+										+e.size-check.LABEL(for='type-15') 75В
+								+e.order
+									+e.BUTTON.order-btn.btn._shadow-in(type='submit') оформить заказ
+									+b.action-buttons._product
+										+e.A.btn(href='#!')
+											+icon('icon-heart', 'action-buttons__icon')
+										+e.A.btn.js-open-popup(href='#' data-popup='js-product-popup')
+											+icon('icon-cart', 'action-buttons__icon')
+
+				+b.popup.js-popup.is-open(data-index='js-product-popup')
+					+e.in.js-popup-in
+						+e.A.close-btn.js-popup-close(href='#')
+							+icon('icon-close')
+						+e.img-wrap
+							+e.img(style='background-image: url(img/content/catalog-1.jpg)')
+						+e.text
+							+e.H3.title.title-sm Товар добавлен
+								br
+								| в корзину
+							+e.data
+								+e.H4.data-name.title-xs Название модели
+								+e.data-info
+									+e.data-item Цена:
+										=	' '
+										+e.SPAN 1000 р.
+									+e.data-item Размер:
+										=	' '
+										+e.SPAN 75B
+							+e.A.basket-btn.btn._shadow-in(href='#!') перейти в корзину
+
+	//end product

@@ -1,0 +1,398 @@
+/* header
+	----------------------------------- */
+.header
+	position: fixed
+	padding-top: 30px
+	top: 0
+	width: 100%
+	z-index: 10
+	pointer-events: none
+	transition: background .7s ease-in
+	+md
+		padding-top: 20px
+		transition: none
+	+sm
+		padding: 15px 0
+		background: $black
+	&__container
+		+justify
+	&__col
+		display: inline-block
+		vertical-align: top
+		pointer-events: all
+	&__mail
+		position: relative
+		z-index: 5
+		display: inline-block
+		vertical-align: middle
+		margin-left: 40px
+		+r(1365)
+			margin-left: 20px
+		+xs
+			display: none
+		&:hover &-icon
+			fill: $black
+			stroke: $black
+			+sm
+				fill: $white
+				stroke: $white
+		&-icon
+			font-size: 27px
+			fill: $white
+			stroke-width: 14px
+			stroke: $white
+			+trs
+			+sm
+				font-size: 26px
+	&_white
+		&::before
+			content: ''
+			top: 0
+			width: 100%
+			height: 96px
+			position: absolute
+			z-index: 3
+			background: $white
+	&_inside
+		.hamburger__line
+			background: $black
+		.header__mail-icon
+			fill: $black
+			stroke: $black
+		.buy__item,
+		.buy__item-icon
+			fill: $black
+			z-index: 5
+		.buy__item-count
+			background: $black
+			color: $white
+
+/* buy
+	----------------------------------- */
+.buy
+	font-size: 0
+	pointer-events: all
+	&__item
+		position: relative
+		display: inline-block
+		vertical-align: middle
+		&:hover &-icon
+			fill: $black
+			+sm
+				fill: $white
+		&:hover &-count
+			background: $black
+			color: $white
+		& + &
+			margin-left: 40px
+			+r(1365)
+				margin-left: 20px
+		&-icon
+			fill: $white
+			+trs
+			&.icon-heart
+				font-size: 34px
+				+sm
+					font-size: 31px
+			&.icon-cart
+				font-size: 37px
+				+sm
+					font-size: 33px
+		&-count
+			position: absolute
+			right: -5px
+			bottom: 0
+			padding: 0 6px
+			height: 22px
+			min-width: 22px
+			z-index: 1
+			border-radius: 50px
+			background: $white
+			+f('amg', 18)
+			color: $black
+			text-align-last: center
+			text-align: center
+			line-height: 23px
+			+trs
+			+sm
+				font-size: 15px
+				height: 18px
+				min-width: 12px
+				line-height: 20px
+				
+/* hamburger
+	----------------------------------- */
+.hamburger
+	width: 34px
+	height: 24px
+	position: relative
+	transform: rotate(0deg)
+	transition: .5s ease-in-out
+	cursor: pointer
+	z-index: 5
+	-webkit-tap-highlight-color: transparent
+	&:hover &__line
+		background: $black
+		+sm
+			background: $white
+	&__line
+		display: block
+		position: absolute
+		height: 2px
+		width: 100%
+		background: $white
+		border-radius: 50px
+		opacity: 1
+		left: 0
+		transform: rotate(0deg)
+		transition: .25s ease-in-out
+		&:nth-child(1)
+			top: 0
+		&:nth-child(2),
+		&:nth-child(3)
+			top: 11px
+		&:nth-child(4)
+			top: 22px
+	&.is-active &__line
+		&:nth-child(1)
+			top: 10px
+			width: 0
+			left: 50%
+		&:nth-child(2)
+			transform: rotate(45deg)
+		&:nth-child(3)
+			transform: rotate(-45deg)
+		&:nth-child(4)
+			top: 10px
+			width: 0
+			left: 50%
+	&_header
+		display: inline-block
+		vertical-align: middle
+			
+/* nav
+	----------------------------------- */
+.nav
+	display: inline-block
+	vertical-align: middle
+	transform: translateY(-125px)
+	transition: transform .6s ease
+	pointer-events: all
+	+md
+		transform: translateY(-89px)
+	+sm
+		position: absolute
+		left: 60px
+		right: 60px
+		transform: translateY(0)
+	&.is-open
+		transform: translateY(-30px)
+		+md
+			transform: translateY(-20px)
+		+sm
+			transform: translate(0)
+		.nav__list
+			+sm
+				opacity: 1
+				pointer-events: all
+				transform: translateX(0)
+	&__list
+		position: relative
+		padding: 38px 0 40px
+		font-size: 0
+		text-align: center
+		+md
+			padding: 26px 0 26px
+		+sm
+			opacity: 0
+			pointer-events: none
+			position: absolute
+			z-index: 10
+			top: 48px
+			transform: translateX(-100%)
+			right: -60px
+			left: -60px
+			background: $black
+			padding: 15px 10px
+			transition: transform .6s ease-in-out, opacity .5s
+		+r(374)
+			padding: 15px 3px
+		&::before,
+		&::after
+			position: absolute
+			z-index: 2
+			bottom: 0
+			content: ''
+			height: 1px
+			background: $white
+			+sm
+				display: none
+		&::before
+			left: 0
+			right: 50%
+		&::after
+			right: 0
+			left: 50%
+			+trs
+	&__list-item
+		display: inline-block
+		vertical-align: top
+		margin: 0 25px
+		+md
+			margin: 0 15px
+		+sm
+			display: inline-block
+			vertical-align: middle
+			margin: 0
+		&:hover a
+			color: $black
+			+sm
+				color: $white
+	&__list-link
+		display: block
+		+f('amg', 18, 18)
+		color: $white
+		+trs
+		+sm
+			font-size: 15px
+		
+	&_inside
+		position: relative
+		z-index: 10
+		transform: translateY(-30px)
+		+md
+			transform: translateY(-20px)
+	&_inside &__list::after
+		top: 0
+		right: 13.4%
+	&_inside &__list::before
+		top: 0
+		left: 14.6%
+	&_inside &__list-item:nth-child(2)
+		margin-right: 140px
+		+r(1365)
+			margin-right: 120px
+		+md
+			margin-right: 90px
+	&_inside &__list-item
+		+md
+			margin: 0 5px
+	&_inside &__list-item:nth-child(3)
+		margin-left: 140px
+		+r(1365)
+			margin-left: 120px
+		+md
+			margin-left: 90px
+	&_inside &__list::after,
+	&_inside &__list::before
+		background: $black
+	&_inside &__list-link
+		color: $black
+		+md
+			font-size: 16px
+	&_inside .logo_header
+		position: absolute
+		top: 0
+		left: 50%
+		margin-left: -95px
+		+md
+			margin-left: -67px
+	&_inside &__list
+		transform: translateY(-130px)
+		transition: transform .45s ease
+	&_inside.is-open .nav__list
+		transform: translateY(0)
+
+/* logo
+	----------------------------------- */
+.logo
+	&.is-visible &__black
+		display: block
+	&__white::after, &__black::after
+		position: relative
+		display: block
+		top: -1px
+		z-index: -1
+		content: ''
+	&__white
+		width: 278px
+		margin: 0 auto
+		+md
+			width: 220px
+			overflow: hidden
+		+sm
+			display: none
+		&::after
+			height: 57px
+			background: url(../img/bg/logo-white_bg.png) no-repeat 50% 50%/100% 100%
+			+md
+				height: 45px
+		&-in
+			background: $white
+	&__white &__img
+		width: 100%
+		height: 100%
+	&__black
+		display: none
+		width: 202px
+		margin: 0 auto
+		+md
+			width: 150px
+		+sm
+			display: block
+		&::after
+			height: 45px
+			background: url(../img/bg/logo-black_bg.png) no-repeat 50% 50%/100% 100%
+			+xs
+				display: none
+		&-in
+			background: $black
+	&__black &__img
+		+md
+			width: 100%
+	&__white-link
+		position: relative
+		top: 20px
+		display: block
+		margin: 0 auto
+		width: 226px
+		+md
+			margin-top: -10px
+			width: 180px
+	&__black-link
+		position: relative
+		top: 17px
+		display: block
+		height: 80px
+		margin: 0 auto
+		width: 165px
+		+md
+			width: 131px
+			height: 73px
+		+sm
+			top: 12px
+			width: 130px
+			height: 51px
+		+xs
+			left: -31px
+	&__img
+		margin: 0 auto
+	&__text
+		display: block
+		font-size: 15px
+		color: $white
+		line-height: 1.1
+		width: 100px
+		text-align: center
+		text-align-last: center
+		margin: 0 auto
+		+md
+			font-size: 14px
+			width: 80px
+		+sm
+			display: none
+			
+	&_header
+		+sm
+			transform: translateY(-20px)
+		 

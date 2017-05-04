@@ -1,0 +1,574 @@
+/* screen
+	----------------------------------- */
+.screen
+	position: relative
+	height: 100vh
+	display: flex
+	align-items: center
+	justify-content: center
+	padding-top: 0!important
+	+sm
+		align-items: flex-end
+	&__in
+		display: flex
+		flex-direction: column
+		justify-content: space-between
+		padding: 0 15px
+		width: 100%
+		+sm
+			padding: 0 10px 30px
+	&__background
+		+coverdiv
+		+cover
+		z-index: -1
+		+gray
+		+md
+			background-position: 22% 50%
+	&__title
+		margin-top: 280px
+		margin-bottom: 140px
+		+f('amg', 51, 51)
+		color: $white
+		text-align: center
+		+r(1439)
+			margin: 270px 0 10px
+		+md
+			margin-top: 225px
+			margin-bottom: 180px
+		+sm
+			margin: 0 0 170px
+			font-size: 30px
+		+xs
+			font-size: 23px
+		&-left
+			margin-left: -25px
+	&__slogan
+		img
+			margin: 0 auto
+	&__act
+		position: absolute
+		display: flex
+		justify-content: space-between
+		max-width: 1748px
+		padding: 0 15px
+		margin: 0 auto
+		left: 0
+		right: 0
+		bottom: 25px
+		z-index: 10
+	&__act-btn
+		&:hover .screen__act-icon
+			fill: $black
+			stroke: $black
+		.icon-mute
+			font-size: 35px
+			stroke-width: 3px
+		.icon-play
+			font-size: 33px
+			stroke-width: 5px
+	&__act-icon
+		fill: $white
+		stroke: $white
+		+trs
+		
+/* info
+	----------------------------------- */
+.info
+	position: relative
+	+sm
+		padding: 30px 0
+	&::before,
+	&::after
+		content: ''
+		+coverdiv
+		z-index: -1
+	&::before
+		top: 0
+		left: 0
+		right: 49.7%
+		bottom: 0
+		background: $white
+	&::after
+		top: 0
+		left: 50%
+		right: 0
+		bottom: 0
+		background: #3A1C71
+		background: linear-gradient(180deg, #f29232 0, rgba(232,83,85,1) 38%, #661edb 100%)
+		+sm
+			display: none
+	&__container
+		max-width: none
+		padding: 0
+		+clr
+	&__col
+		float: left
+		width: 50%
+		&:nth-child(1)
+			padding-left: 100px
+			padding-right: 30px
+			background-color: $white
+			+md
+				padding-left: 20px
+			+sm
+				float: none
+				width: 100%
+				padding: 0
+		
+		&:nth-child(2)
+			padding-right: 100px
+			padding-left: 30px
+			+md
+				padding-right: 20px
+			+sm
+				display: none
+			
+	&__text
+		margin-bottom: 160px
+		+selection
+			background: #f29232
+		+r(1439)
+			margin-bottom: 50px
+		+sm
+			margin-bottom: 30px
+	&__title
+		max-width: 540px
+		margin-bottom: 35px
+		+r(1439)
+			font-size: 66px
+		+md
+			font-size: 50px
+			max-width: 320px
+	&__descr
+		max-width: 660px
+		line-height: 0.96
+		+sm
+			font-size: 16px
+
+/* top-products
+	----------------------------------- */
+.top-products
+	padding-top: 0 !important
+	&__container
+		max-width: none
+		padding: 0
+		+clr
+		+md
+			padding: 0
+	&__item
+		position: relative
+		float: left
+		width: 50%
+		height: 100vh
+		display: flex
+		align-items: center
+		+sm
+			height: auto
+			min-height: 300px
+			width: 100%
+			padding: 20px 15px 20px
+		&_full
+			.top-products__in
+				align-self: flex-start
+				@media only screen and (max-width: 1023px) and (min-height: 600px)
+					padding-top: 66px
+		&_top
+			padding: 140px 30px 30px 100px
+			+lg
+				padding: 90px 20px 10px 120px
+			+r(1365)
+				padding: 115px 20px 10px 70px
+			@media only screen and (max-width: 1023px) and (min-height: 600px)
+				padding: 115px 20px 10px 20px!important
+		&_bottom
+			padding: 90px 30px 30px 100px
+			+r(1365)
+				padding: 60px 30px 30px 70px
+			+md
+				padding: 100px 30px 30px 20px
+		&_half
+			height: 50vh
+		&-in
+			position: relative
+			z-index: 2
+		&-img
+			+coverdiv
+			+cover
+			z-index: -1
+			+md
+			    background-position: 13% 50%
+			+sm
+				background-position: 50% 50%
+				background-size: cover
+			&_custom-1
+				background-position: 50% 75%
+				+lg
+					background-position: 50% 30%
+		 	&_rh
+				@media only screen and (max-width: 1023px) and (min-height: 700px)
+					background-position: 80% 50% !important
+			&_custom-2
+				transform: scaleX(-1)
+				background-size: 138% 197%
+				background-position: 11% 53%
+				+r(1365)
+					background-size: 168% 197%
+					background-position: 23% 53%
+				+md
+					background-position: 22% 50%
+					background-size: 158% 161%
+				@media only screen and (max-width: 1023px) and (min-height: 700px)
+					background-size: 166% 108% !important
+					background-position: 22% 86%
+				&::after
+					content: ''
+					+coverdiv
+					background: rgba(#000, .3)
+					z-index: -1
+				
+		&-title
+			margin-bottom: 23px
+			max-width: 450px
+			&::selection
+				background: $white
+			+md
+				font-size: 35px
+			+sm
+				max-width: 350px
+		&-descr
+			max-width: 650px
+			&::selection
+				background: $white
+			+r(1365)
+				font-size: 17px
+			+md
+				font-size: 15px
+			+sm
+				font-size: 17px
+			@media only screen and (max-width: 1023px) and (min-height: 750px)
+				font-size: 20px!important
+		&-bar
+			max-width: 690px
+			margin-top: 37px
+			+justify
+			+lg
+				margin-top: 20px
+			+r(1365)
+				margin-top: 15px
+			&_divided
+				margin-top: 50px
+				+md
+					margin-top: 50px
+				+sm
+					margin-top: 20px
+				.top-products__item-actions
+					display: block
+					max-width: 350px
+					margin-top: 100px
+					+md
+						margin-top: 40px
+					+sm
+						margin-top: 30px
+		&-prices
+			display: inline-block
+			vertical-align: middle
+			font-size: 0
+			+md
+				margin-bottom: 15px
+		&-price
+			display: inline-block
+			vertical-align: middle
+			font-size: 30px
+			line-height: (22/30)
+			& + &
+				margin-left: 45px
+				+lg
+					margin-left: 20px
+			&_old
+				text-decoration: line-through
+		
+		&-actions
+			display: inline-block
+			vertical-align: middle
+			+r(1365)
+				width: 100%
+				margin-top: 20px
+			+sm
+				margin-top: 15px
+		&-label
+			padding: 14px 40px 14px 100px
+			font-size: 38px
+			line-height: (22/38)
+			color: $white
+			background: $black
+			&_pos
+				position: absolute
+				z-index: 1
+				left: 0
+				bottom: 190px
+				+lg
+					bottom: 90px
+			+md
+				font-size: 28px
+				padding: 14px 30px 14px 80px
+			+sm
+				font-size: 23px
+				padding: 14px 30px 14px 50px
+				bottom: auto
+				left: auto
+				top: 22px
+				right: 0
+		
+		&_white &-title,
+		&_white &-descr,
+		&_white &-price
+			color: $white
+			&::selection
+				background: $black
+		&_white .top-products__watch-btn
+			&:hover
+				box-shadow: inset 0 0 30px rgba(#fff, .9)
+				color: $white
+				border-color: $white
+				
+	&__watch-btn
+		+trs
+		&:hover
+			box-shadow: inset 0 0 15px rgba(#000, .8)
+		
+/* catalog
+	----------------------------------- */
+.catalog
+	+sm
+		padding: 30px 0
+	&__container
+		padding: 90px 15px 220px
+		+lg
+			padding: 50px 15px 210px
+	&__in
+		+clr
+	&__side
+		float: left
+		width: percentage(360 / 1718)
+		+sm
+			width: 100%
+			float: none
+	&__content-wrap
+		float: right
+		width: percentage(1320 / 1718)
+		+sm
+			width: 100%
+			float: none
+	&__content
+		+clr
+	&__title
+		+r(1599)
+			font-size: 60px
+		+r(1365)
+			font-size: 40px
+	&__nav
+		margin-top: 35px
+		+sm
+			font-size: 0
+			margin: 25px 0 20px
+			text-align-last: left
+		li
+			position: relative
+			padding-left: 25px
+			+md
+				padding-left: 15px
+			+sm
+				display: inline-block
+			&.is-active
+				pointer-events: none
+			&.is-active .catalog__nav-icon
+				opacity: 1
+			&:not(:last-child)
+				margin-bottom:  20px
+				+r(1439)
+					margin-bottom: 15px
+			
+			a
+				display: inline-block
+				vertical-align: middle
+				line-height: 1
+				+r(1365)
+					font-size: 17px
+				+sm
+					padding: 0 5px
+		&-icon
+			position: absolute
+			left: 0
+			top: 50%
+			transform: translateY(-50%)
+			font-size: 15px
+			margin-top: -2px
+			+trs
+			opacity: 0
+			+md
+				font-size: 10px
+	&__item
+		position: relative
+		float: left
+		width: percentage(324 / 1320)
+		overflow: hidden
+		margin-right: 0.606060%
+		margin-bottom: 0.606060%
+		+md
+			width: 32.5333%
+		+sm
+			width: 32.72%
+		+r(599)
+			width: 49.39%
+		+r(424)
+			width: 100%
+			margin-bottom: 6px
+		&::after
+			padding-top: 100%
+			display: block
+			content: ''
+		&:nth-child(4n)
+			margin-right: 0
+			+md
+				margin-right: 0.606060%
+		&:hover &-info
+			opacity: 1
+		&-img
+			+coverdiv
+			+cover
+			z-index: 1
+		&-info
+			padding: 50px 15px 10px 40px
+			+coverdiv
+			background: rgba(#000, .6)
+			z-index: 2
+			color: $white
+			font-size: 24px
+			opacity: 0
+			+tr(opacity .4s ease)
+			cursor: default
+			+gpu
+			+r(1599)
+				padding: 30px 15px 10px 25px
+			+r(1365)
+				padding: 10px
+				font-size: 18px
+		&-label
+			display: inline-block
+			margin-left: -40px
+			padding: 14px 41px
+			background: $white
+			color: $black
+			+r(1599)
+				padding: 8px 30px
+				margin-left: -30px
+		
+		&-name
+			max-width: 200px
+			margin-top: 35px
+			margin-bottom: 20px
+			+lg
+				max-width: 180px
+				margin-top: 15px
+				font-size: 21px
+			+r(1365)
+				margin: 10px 0
+			+md
+				max-width: 150px
+				font-size: 18px
+			+r(424)
+				margin: 30px 0
+		&-prices
+			+clr
+		&-price
+			float: left
+			+r(1365)
+				font-size: 22px
+			& + &
+				margin-left: 40px
+				+r(1365)
+					margin-left: 20px
+			&_old
+				text-decoration-line: line-through
+		&-actions
+			margin-top: 30px
+			
+/* summary
+	----------------------------------- */
+.summary
+	&__info
+		padding-bottom: 60px
+		margin: 0 -15px
+		+clr
+		+r(1439)
+			padding-bottom: 20px
+		+r(1365)
+			line-height: 1.1
+		&-col
+			padding: 0 15px
+			&:nth-child(1)
+				float: left
+				width: percentage(660 / 1718)
+				+r(1365)
+					width: 47%
+				+md
+					width: 56%
+				+sm
+					width: 100%
+					margin-bottom: 10px
+			&:nth-child(2)
+				float: right
+				width: 45.5%
+				+r(1365)
+					width: 52%
+				+md
+					width: 42%
+				+sm
+					width: 100%
+	&__delivery
+		&-title
+			margin-bottom: 30px
+			+r(1439)
+				margin-bottom: 15px
+			+sm
+				font-size: 34px
+
+.fp-viewing-summary-section
+	.next-section-btn
+		display: none
+			
+/* subscribe
+	----------------------------------- */
+.subscr
+	&__title
+		margin-bottom: 35px
+		+r(1439)
+			margin-bottom: 15px
+		+sm
+			font-size: 34px
+	&__form-wrap
+		margin-top: 50px
+		+md
+			margin-top: 10px
+	&__form-in
+		font-size: 0
+	&__form-field
+		display: inline-block
+		vertical-align: middle
+		max-width: 270px
+		+md
+			width: 100%
+			text-align: right
+		+sm
+			width: 100%
+			max-width: none
+			text-align: center
+		& + &
+			margin-left: 25px
+			+md
+				margin-left: 0
+				margin-top: 20px
+	&__btn
+		padding: 13px 56px
+			
+		

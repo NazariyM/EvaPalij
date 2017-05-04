@@ -1,0 +1,28 @@
++font("AMG-Anahit-ss", AMG-Anahit-ss)
++font("Cambria-Regular", Cambria-Regular)
++font("Cambria-Bold", Cambria-Bold)
++font("Cambria-Bold-Italic", Cambria-Bold-Italic)
++font("Cambria-Bold", Cambria-Bold)
++font("Cambria-Italic", Cambria-Italic)
+
+=f($name, $font-size: null, $line-height: null, $letter-spacing: null)
+	$font-family: null
+	@if $name == "amg"
+		$font-family: "AMG-Anahit-ss"
+	@if $name == "cr"
+		$font-family: "Cambria-Regular"
+	@if $name == "cb"
+		$font-family: "Cambria-Bold"
+	@if $name == "cbi"
+		$font-family: "Cambria-Bold-Italic"
+	@if $name == "ci"
+		$font-family: "Cambria-Italic"
+	font-family: $font-family, Arial, sans-serif
+	@if $font-family != null
+		font-weight: normal
+	@if $font-size != null
+		font-size: $font-size * 1px
+	@if $line-height != null
+		line-height: $line-height/$font-size
+	@if $letter-spacing != null
+		letter-spacing: ($letter-spacing / 1000) * 1em
