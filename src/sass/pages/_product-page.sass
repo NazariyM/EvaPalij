@@ -61,8 +61,16 @@
 				+sm
 					margin-left: 20px
 			&_old
+				position: relative
 				font-size: 30px
-				text-decoration-line: line-through
+				&::after
+					content: ''
+					left: 0
+					top: 51%
+					position: absolute
+					height: 3px
+					background: $black
+					width: 100%
 				+sm
 					font-size: 22px
 		&-article
