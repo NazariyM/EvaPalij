@@ -119,14 +119,16 @@ $(function () {
 			windowWidth = 767;
 
 		$(window).on('resize, load', function () {
-			if ($(window).width() >= windowWidth && !$header.hasClass('header_inside') && !$body.hasClass('is-home')) {
-				$header.addClass('header_inside');
-				$nav.addClass('nav_inside');
-			}
-			else if ($(window).width() <= windowWidth && $header.hasClass('header_inside')) {
-				$header.removeClass('header_inside');
-				$nav.removeClass('nav_inside');
-			}
+			setTimeout(function () {
+				if ($(window).width() >= windowWidth && !$header.hasClass('header_inside') && !$body.hasClass('is-home')) {
+					$header.addClass('header_inside');
+					$nav.addClass('nav_inside');
+				}
+				else if ($(window).width() <= windowWidth && $header.hasClass('header_inside')) {
+					$header.removeClass('header_inside');
+					$nav.removeClass('nav_inside');
+				}
+			},1);
 		});
 	}
 
