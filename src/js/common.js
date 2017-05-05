@@ -114,18 +114,20 @@ $(function () {
 
 	function initBlackHeader() {
 		let $header = $('.js-header'),
+			$headerInside = $header.hasClass('header_inside'),
 			$nav = $('.js-nav'),
+			$bodyInside = $('body').hasClass('is-inside'),
 			windowWidth = 767;
 
-			$(window).on('resize', function () {
-				if ($(window).width() <= windowWidth && $header.hasClass('header_inside')) {
-					$header.removeClass('header_inside');
-					$nav.removeClass('nav_inside');
-				}
+		$(window).on('resize', function () {
+			if ($(window).width() <= windowWidth && $headerInside) {
+				$header.removeClass('header_inside');
+				$nav.removeClass('nav_inside');
+			}
 		});
 
 		$(function () {
-			if ($(window).width() <= windowWidth && $header.hasClass('header_inside') && $('body').hasClass('is-inside')) {
+			if ($(window).width() <= windowWidth && $headerInside && $bodyInside) {
 				$header.removeClass('header_inside');
 				$nav.removeClass('nav_inside');
 			}
