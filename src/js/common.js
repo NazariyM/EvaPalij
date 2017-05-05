@@ -117,13 +117,18 @@ $(function () {
 			$nav = $('.js-nav'),
 			windowWidth = 767;
 
-		setTimeout(function () {
-			$(window).on('resize, load', function () {
+			$(window).on('resize', function () {
 				if ($(window).width() <= windowWidth && $header.hasClass('header_inside')) {
 					$header.removeClass('header_inside');
 					$nav.removeClass('nav_inside');
 				}
-			},500);
+		});
+
+		$(function () {
+			if ($(window).width() <= windowWidth && $header.hasClass('header_inside') && $('body').hasClass('is-inside')) {
+				$header.removeClass('header_inside');
+				$nav.removeClass('nav_inside');
+			}
 		});
 	}
 
