@@ -142,6 +142,8 @@
 	&__descr
 		max-width: 660px
 		line-height: 0.96
+		@media only screen and (max-width: 1023px) and (min-height: 900px)
+			font-size: 19px
 		+sm
 			line-height: 1.15
 			font-size: 16px
@@ -161,27 +163,31 @@
 		float: left
 		width: 50%
 		height: 100vh
-		display: flex
-		align-items: center
+		//display: flex
+		//align-items: center
 		+sm
 			height: auto
 			width: 100%
 			padding: 40px 15px
-		&_full
-			.top-products__in
-				align-self: flex-start
-				@media only screen and (min-width: 767px) and (max-width: 1023px) and (min-height: 600px)
-					padding-top: 66px
+		//&_full
+			//.top-products__in
+			//	align-self: flex-start
+				//padding-top: 80px
+				//@media only screen and (min-width: 767px) and (max-width: 1023px) and (min-height: 600px)
+				//	padding-top: 66px
 		&_top
 			padding: 140px 30px 30px 100px
 			+lg
-				padding: 90px 20px 10px 120px
+				padding: 105px 20px 10px 120px
 			+r(1365)
 				padding: 115px 20px 10px 70px
-			@media only screen and (min-width: 767px) and (max-width: 1023px) and (min-height: 600px)
-				padding: 115px 20px 10px 20px!important
+			@media only screen and (min-width: 767px) and (min-height: 800px) and (max-width: 1024px)
+				padding: 175px 20px 10px!important
 		&_bottom
 			padding: 90px 30px 30px 100px
+			+lg
+				padding: 70px 30px 30px 100px
+			
 			+r(1365)
 				padding: 60px 30px 30px 70px
 			+md
@@ -217,9 +223,12 @@
 				+md
 					background-position: 22% 50%
 					background-size: 158% 161%
-				@media only screen and (max-width: 1023px) and (min-height: 700px)
+				@media only screen and (max-width: 1023px) and (min-width: 767px) and (min-height: 700px)
 					background-size: 166% 108% !important
 					background-position: 22% 86%
+				@media only screen and (min-width: 767px) and (max-width: 1024px) and (min-height: 750px)
+					background-size: 209% 147% !important
+					background-position: 16% 53% !important
 				&::after
 					content: ''
 					+coverdiv
@@ -231,6 +240,8 @@
 			max-width: 450px
 			&::selection
 				background: $white
+			@media only screen and (min-width: 767px) and (min-height: 900px)
+				font-size: 46px!important
 			+md
 				font-size: 35px
 			+sm
@@ -239,15 +250,15 @@
 			max-width: 650px
 			&::selection
 				background: $white
-			+r(1365)
+			+lg
 				font-size: 17px
 			+md
 				font-size: 15px
 			+sm
 				font-size: 17px
 				line-height: 1.1
-			@media only screen and (min-width: 767px) and (max-width: 1023px) and (min-height: 750px)
-				font-size: 20px!important
+			@media only screen and (min-width: 767px) and (min-height: 900px)
+				font-size: 21px!important
 		&-bar
 			max-width: 690px
 			margin-top: 37px
