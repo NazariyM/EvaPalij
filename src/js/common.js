@@ -117,11 +117,13 @@ $(function () {
 			$nav = $('.js-nav'),
 			windowWidth = 767;
 
-		$(window).on('resize, load', function () {
+		setTimeout(function () {
+			$(window).on('resize, load', function () {
 				if ($(window).width() <= windowWidth && $header.hasClass('header_inside')) {
 					$header.removeClass('header_inside');
 					$nav.removeClass('nav_inside');
 				}
+			},500);
 		});
 	}
 
