@@ -128,7 +128,7 @@ $(function () {
 					$header.removeClass('header_inside');
 					$nav.removeClass('nav_inside');
 				}
-			},1);
+			},100);
 		});
 	}
 
